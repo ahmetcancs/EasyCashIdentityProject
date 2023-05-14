@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace EasyCashIdentityProject.DataAccessLayer.Abstract
 {
-    internal interface IGenericDal
+    public interface IGenericDal<T> where T : class
     {
+        void Insert(T t);
+        void Update(T t);
+        void Delete(T t);
+        T? GetByID(int id);
+        List<T> GetList();
     }
 }
