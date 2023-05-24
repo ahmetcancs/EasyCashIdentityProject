@@ -39,7 +39,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     City = "Bursa",
                     District = "MKP",
                     ImageUrl = "test",
-                    PhoneNumber = "+905346199695",
+                    PhoneNumber = "+12345678910",
                     ConfirmCode = code
                 };
                 var result = await _userManager.CreateAsync(appUser,appUserRegisterDto.Password);
@@ -58,7 +58,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     mimeMessage.Subject = "Easy Cash Onay Kodu";
                     SmtpClient client = new SmtpClient();
                     client.Connect("smtp.gmail.com", 587, false);
-                    client.Authenticate("ahmetcan9816@gmail.com", "snqtrtwxlxxzoqjl");
+                    client.Authenticate("ahmetcan9816@gmail.com", "");
                     client.Send(mimeMessage);
                     client.Disconnect(true);
 
